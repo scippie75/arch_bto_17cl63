@@ -182,3 +182,9 @@ load-module module-bluetooth-policy
 load-module module-bluetooth-discover
 ```
 I needed a reboot after this
+
+## Configure power management
+You can add these commands to i3 config:
+ * xset s 3600 3600 to let screen go blank after 1 hour
+ * xset dpms 0 0 0 to prevent automatic standby, suspend, off
+ * xset q for more information
