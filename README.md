@@ -81,6 +81,9 @@ It would now be possible to reboot, but then you will have no wifi. You can eith
 
  * yay -Syu networkmanager network-manager-applet networkmanager-fortisslvpn-git
  * Add line to i3 config: exec --no-startup-id nm-applet
+
+## Pulseaudio
+ * yay -Syu pulseaudio alsa-utils (you may need to reboot for pulseaudio to work, you will probably want to wait)
  
 You should now be able to reboot and use wifi, but if you go on, you can make sure that i3 boots up nice
 
@@ -105,10 +108,12 @@ echo "Polybar launched..."
  * disable the whole i3bar section
  * exec_always --no-startup-id $HOME/.config/polybar/launch.sh
  * yay -Syu siji-git
- * Restart i3 (win+shift+r) and the polybar should be visible
- * Useful i3 config stuff:
- 	* yay -Syu pulseaudio alsa-utils (you may need to reboot for pulseaudio to work)
-	* Keyboard bindings:
+ * If already in i3: restart i3 (win+shift+r) and the polybar should be visible
+
+You can now reboot (or go on if you really want)
+ 
+## Useful i3 config stuff:
+ * Keyboard bindings:
 ```bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 bindsym XF86AudioRaiseVolume exec amixer -D pulse -q set Master playback 5%+ unmute
