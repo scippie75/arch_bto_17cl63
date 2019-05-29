@@ -106,3 +106,9 @@ bindsym XF86AudioRaiseVolume exec amixer -D pulse -q set Master playback 5%+ unm
 bindsym XF86AudioLowerVolume exec amixer -D pulse -q set Master playback 5%- unmute
 bindsym XF86AudioMute exec amixer -D pulse -q set Master toggle
 ```
+
+# NetworkManager (and forticlient support)
+
+ * yay -Syu networkmanager network-manager-applet networkmanager-forticlientvpn-git
+ * Add line to i3 config: exec --no-startup-id nm-applet
+ 
