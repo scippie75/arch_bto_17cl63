@@ -170,3 +170,15 @@ EndSection
  * sudo vi /etc/systemd/logind.conf and change the defaults (make sure HandleLidSwitch* = lock)
  * yay -Syu xss-lock
  * add line to ~/.config/i3/config: exec --no-startup-id xss-lock -- i3lock -n (optionally with parameters like -i <image.png>)
+
+## Bluetooth
+ * yay -Syu bluez bluez-utils pulseaudio-bluetooth
+ * sudo systemctl enable bluetooth.service
+ * sudo systemctl start bluetooth.service
+ * yay -Syu blueman
+ * sudo vi /etc/pulse/system.pa and add the following lines:
+```
+load-module module-bluetooth-policy
+load-module module-bluetooth-discover
+```
+I needed a reboot after this
