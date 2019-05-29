@@ -192,5 +192,8 @@ You can add these commands to i3 config:
 ## Fingerprint sensor
 I don't want it... see https://wiki.archlinux.org/index.php/Fingerprint_GUI for more information
 
-## Keyboard RGB (further research is needed, but it works with the following steps)
-* yay -Syu clevo-xsm-wmi clevo-xsm-wmi-dkms clevo-xsm-wmi-util (may be a conflict...)
+## Keyboard RGB
+ * yay -Syu clevo-xsm-wmi clevo-xsm-wmi-dkms clevo-xsm-wmi-util (may be a conflict...)
+ * sudo systemctl start clevo-xsm-wmi
+ * sudo systemctl enable clevo-xsm-wmi
+See https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/src/master/module/ABI/testing/sysfs-driver-clevo-xsm-wmi for more information on how to manually change the colors
