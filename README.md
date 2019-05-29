@@ -127,9 +127,9 @@ exec --no-startup-id setxkbmap -layout us -variant altgr-intl -option nodeadkeys
 ```
  * Keyboard bindings:
 ```
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
-bindsym XF86AudioRaiseVolume exec amixer -D pulse -q set Master playback 5%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -D pulse -q set Master playback 5%- unmute
-bindsym XF86AudioMute exec amixer -D pulse -q set Master toggle
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 # decrease screen brightness
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse -q set Master playback 5%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse -q set Master playback 5%- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse -q set Master toggle
 ```
