@@ -7,16 +7,11 @@ Disclaimer: this document is Work In Progress. Do not use! I am not responsible 
 
 See: https://wiki.archlinux.org/index.php/Installation_guide
  * Boot with the Arch iso
- * Set up wireless lan (lspci -k: Qualcomm Atheros QCA6174 on my notebook): https://wiki.archlinux.org/index.php/Wireless_network_configuration - Note: especially this section can be done on so many different ways, this may not be a good way!
-	 * _ip link -> shows 3: wlp62s0_
-	 * ip link set wlp62s0 up
-	 * wpa_passphrase SSID "password" > /etc/wpa_supplicant/SSID.conf
-	 * wpa_supplicant -iwlp62s0 -c /etc/wpa_supplicant/SSID.conf &
-	 * _iw dev wlp62s0 scan -> shows my SSID_
-	 * _iw dev wlp62s0 connect SSID (should already be happening)_
-	 * systemctl restart dhcpcd
-	 * ip addr (can take a while) -> should show an ip address
-	 * _ping archlinux.org -> should work_
+ * Set up wireless lan
+  	* _lspci -k shows Qualcomm Atheros QCA6174 on my notebook_
+	* wifi-menu -> select the wifi SSID and configure, close and wait a while
+	* _ip addr to see if it worked_
+	* _ping archlinux.org -> should work_
  * timedatectl set-ntp true
  * Partitioning:
 	* _fdisk -l (at this time, we will be using /dev/sdb6 as installation partition)_
