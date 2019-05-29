@@ -133,3 +133,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse -q set Master 
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse -q set Master playback 5%- unmute
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse -q set Master toggle
 ```
+
+## Thunar - file explorer
+ * yay -Syu thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler ffmpegtthumbnailer
