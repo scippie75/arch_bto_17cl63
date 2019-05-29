@@ -115,6 +115,14 @@ echo "Polybar launched..."
 You can now reboot (or go on if you really want)
  
 ## Useful i3 config stuff:
+ * Faster keyboard response:
+```
+exec_always --no-startup-id xset r rate 300 50
+```
+ * Keyboard layout US-international
+```
+exec --no-startup-id setxkbmap -layout us -variant altgr-intl -option nodeadkeys
+```
  * Keyboard bindings:
 ```
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
