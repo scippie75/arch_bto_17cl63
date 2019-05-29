@@ -78,15 +78,17 @@ It would now be possible to reboot, but then you will have no wifi. You can eith
  * Add a line above: set $mod Mod4
  
 ## NetworkManager (and forticlient support)
-
  * yay -Syu networkmanager network-manager-applet networkmanager-fortisslvpn-git
  * sudo systemctl enable NetworkManager
  * Add line to i3 config: exec --no-startup-id nm-applet
 
 ## Pulseaudio
  * yay -Syu pulseaudio alsa-utils (you may need to reboot for pulseaudio to work, you will probably want to wait)
- 
+
 You should now be able to reboot and use wifi, but if you go on, you can make sure that i3 boots up nice
+
+## Ssh
+ * yay -Syu openssh
 
 ## Make i3 a little more beautiful
  * yay -Syu polybar rofi
