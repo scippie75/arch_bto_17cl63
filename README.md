@@ -93,7 +93,8 @@ You should now be able to reboot and use wifi, but if you go on, you can make su
  * mkdir ~/.config/polybar
  * cp /usr/share/doc/polybar/config ~/.config/polybar/config
  * vi ~/.config/polybar/launch.sh
-```#!/bin/bash
+```
+#!/bin/bash
 # Terminate already running bar instances
 killall -q polybar
 # Wait until the processes have been shut down
@@ -115,7 +116,8 @@ You can now reboot (or go on if you really want)
  
 ## Useful i3 config stuff:
  * Keyboard bindings:
-```bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+```
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 bindsym XF86AudioRaiseVolume exec amixer -D pulse -q set Master playback 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -D pulse -q set Master playback 5%- unmute
