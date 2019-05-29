@@ -166,3 +166,5 @@ EndSection
  * gpg --recv-key 824A5E0010A04D46 (check on https://aur.archlinux.org/packages/eid-mw/ and if this fails, try another DNS)
  * yay -Syu eid-mw
  
+## Close laptop lid configuration (hangs the OS if not configured)
+ * sudo vi /etc/systemd/logind.conf and change the defaults (make sure HandleLidSwitch* = ignore)
