@@ -64,6 +64,7 @@ It would now be possible to reboot, but then you will have no wifi. You can eith
 
 ## Make life easier with yay:
  * sudo pacman -Syu git
+ * cd ~
  * git clone https://aur.archlinux.org/yay.git
  * cd yay
  * makepkg -cris
