@@ -50,3 +50,59 @@ See: https://wiki.archlinux.org/index.php/Installation_guide
  * grub-mkconfig -o /boot/grub/grub.cfg
  * reboot
  
+## Create a user
+ * useradd -m -G wheel dirk
+ * passwd dirk
+ * vi /etc/sudoers and uncomment the wheel section
+ * log out and log in as dirk
+ 
+## Video driver & i3
+ * sudo vi /etc/pacman.conf and enable multilib (by uncommenting two lines)
+ * sudo pacman -Syu xorg nvidia nvidia-utils lib32-nvidia-utils (I selected all the defaults)
+ * sudo pacman -Syu i3-wm terminator lightdm lightdm-gtk-greeter
+ * sudo systemctl enable lightdm.service
+ * reboot (you should now be able to log in in i3)
+
+## Make life a bit easier:
+ * sudo pacman -Syu vim
+ * sudo ln -sf /usr/bin/vim /usr/bin/vi
+
+## Make life easier with yay:
+ * sudo pacman -Syu git
+ * git clone https://aur.archlinux.org/yay.git
+ * cd yay
+ * makepkg -cris
+ * cd ..
+ * rm -rf yay
+
+# Make i3 a little more beautiful
+ * yay -Syu polybar rofi
+ * mkdir ~/.config/polybar
+ * cp /usr/share/doc/polybar/config ~/.config/polybar/config
+ * vi ~/.config/polybar/launch.sh
+```#!/bin/bash
+# Terminate already running bar instances
+killall -q polybar
+# Wait until the processes have been shut down
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+# Launch Polybar, using default config location ~/.config/polybar/config
+polybar mybar &
+echo "Polybar launched..."
+```
+ * chmod +x ~/.config/polybar/launch.sh
+ * vi ~/.config/polybar/config and change [bar/example] to [bar/mybar], optionally other things as well
+ * vi ~/.config/i3/config and add/update the following lines: bindsym $mod+space exec rofi -show run -theme arthur
+ * disable the change focus between tiling/floating window binding
+ * disable the whole i3bar section
+ * exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+ * yay -Syu siji-git
+ * Restart i3 (win+shift+r) and the polybar should be visible
+ * Useful i3 config stuff:
+ 	* yay -Syu pulseaudio alsa-utils (you may need to reboot for pulseaudio to work)
+	* Keyboard bindings:
+```bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86AudioRaiseVolume exec amixer -D pulse -q set Master playback 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -D pulse -q set Master playback 5%- unmute
+bindsym XF86AudioMute exec amixer -D pulse -q set Master toggle
+```
