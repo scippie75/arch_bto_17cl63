@@ -157,7 +157,7 @@ EndSection
  * open browser on localhost:631 and follow the user interface to add the Lexmark CX310dn printer (find the PPD in Dropbox under Linux folder)
 
 ## Thunar - file explorer
- * yay -Syu thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler ffmpegtthumbnailer
+ * yay -Syu thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler ffmpegthumbnailer
 
 ## EID reader
  * yay -Syu ccid
