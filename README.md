@@ -71,9 +71,13 @@ It would now be possible to reboot, but then you will have no wifi. You can eith
  * cd ..
  * rm -rf yay
  
+## Make sure you have an i3 config file to edit
+ * mkdir ~/.config/i3
+ * cp /etc/i3/config ~/.config/i3/config
+ 
 ## NetworkManager (and forticlient support)
 
- * yay -Syu networkmanager network-manager-applet networkmanager-forticlientvpn-git
+ * yay -Syu networkmanager network-manager-applet networkmanager-fortisslvpn-git
  * Add line to i3 config: exec --no-startup-id nm-applet
  
 You should now be able to reboot and use wifi, but if you go on, you can make sure that i3 boots up nice
