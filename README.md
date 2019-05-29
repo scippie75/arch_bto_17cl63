@@ -49,7 +49,7 @@ It would now be possible to reboot, but then you will have no wifi. Install netc
  * useradd -m -G wheel dirk
  * passwd dirk
  * vim /etc/sudoers and uncomment the wheel section
- * log out and log in as dirk
+ * log in as dirk: su dirk
  
 ## Video driver & i3
  * sudo vim /etc/pacman.conf and enable multilib (by uncommenting two lines)
