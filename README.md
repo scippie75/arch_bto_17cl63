@@ -144,6 +144,11 @@ Section "InputClass"
 EndSection
 ```
 
+## SSD periodic TRIM
+ * yay -Syu util-linux
+ * sudo systemctl enable fstrim.timer
+ * sudo systemctl start fstrim.timer
+
 ## Thunar - file explorer
  * yay -Syu thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler ffmpegtthumbnailer
 
