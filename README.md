@@ -188,3 +188,6 @@ You can add these commands to i3 config:
  * xset s 3600 3600 to let screen go blank after 1 hour
  * xset dpms 0 0 0 to prevent automatic standby, suspend, off
  * xset q for more information
+
+## Fingerprint sensor
+I don't want it... see https://wiki.archlinux.org/index.php/Fingerprint_GUI for more information
