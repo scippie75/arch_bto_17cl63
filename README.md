@@ -148,6 +148,13 @@ EndSection
  * yay -Syu util-linux
  * sudo systemctl enable fstrim.timer
  * sudo systemctl start fstrim.timer
+ 
+## Printer (Lexmark CX310dn & pdf)
+ * yay -Syu cups cups-pdf
+ * sudo usermod -aG sys dirk
+ * sudo systemctl enable org.cups.cupsd.service
+ * sudo systemctl start org.cupscupsd.service
+ * open browser on localhost:631 and follow the user interface to add the Lexmark CX310dn printer (find the PPD in Dropbox under Linux folder)
 
 ## Thunar - file explorer
  * yay -Syu thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler ffmpegtthumbnailer
