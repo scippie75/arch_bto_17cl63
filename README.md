@@ -159,3 +159,10 @@ EndSection
 ## Thunar - file explorer
  * yay -Syu thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler ffmpegtthumbnailer
 
+## EID reader
+ * yay -Syu ccid
+ * sudo systemctl enable pcscd.socket
+ * sudo systemctl start pcscd.socket
+ * gpg --recv-key 824A5E0010A04D46 (check on https://aur.archlinux.org/packages/eid-mw/ and if this fails, try another DNS)
+ * yay -Syu eid-mw
+ 
