@@ -134,5 +134,16 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse -q set Master 
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse -q set Master toggle
 ```
 
+## Touchpad "tapping"
+Edit /etc/X11/xorg.conf.d/30-touchpad.conf
+```
+Section "InputClass"
+    Identifier "libinput touchpad catchall"
+    Driver "libinput"
+    Option "Tapping" "on"
+EndSection
+```
+
 ## Thunar - file explorer
  * yay -Syu thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler ffmpegtthumbnailer
+
