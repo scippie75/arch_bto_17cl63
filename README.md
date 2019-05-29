@@ -18,7 +18,7 @@ See: https://wiki.archlinux.org/index.php/Installation_guide
 	* mkfs.ext4 /dev/sdb6
 	* mount /dev/sdb6 /mnt
  * Installing base:
-	* vi /etc/pacman.d/mirrorlist and move Belgium (because that's where I live) to the top (will be copied, so it is worth getting it right already, but can of course be edited later)
+	* vim /etc/pacman.d/mirrorlist and move Belgium (because that's where I live) to the top (will be copied, so it is worth getting it right already, but can of course be edited later)
 	* pacstrap /mnt base base-devel
  * Configuring:
 	* genfstab -U /mnt >> /mnt/etc/fstab
@@ -27,12 +27,12 @@ See: https://wiki.archlinux.org/index.php/Installation_guide
  * Locale:
 	* Timezone: ln -sf /usr/share/zoneinfo/Europe/Brussels /etc/localtime
 	* hwclock --systohc
-	* vi /etc/locale.gen and uncomment en_US.UTF-8 UTF-8
+	* vim /etc/locale.gen and uncomment en_US.UTF-8 UTF-8
 	* locale-gen
-	* vi /etc/locale.conf and write *LANG=en_US.UTF-8* in it
+	* vim /etc/locale.conf and write *LANG=en_US.UTF-8* in it
  * Network:
-	* vi /etc/hostname and write *arch-bto2* in it
-	* vi /etc/hosts and add:
+	* vim /etc/hostname and write *arch-bto2* in it
+	* vim /etc/hosts and add:
 		* 127.0.0.1 localhost
 		* ::1 localhost
 		* 127.0.1.1 arch-bto2.frixx-it arch-bto2 (replace 127.0.1.1 with the static ip if there is one - 192.168.60.52)
@@ -40,7 +40,7 @@ See: https://wiki.archlinux.org/index.php/Installation_guide
 	* wpa_passphrase SSID "password" > /etc/wpa_supplicant/SSID.conf - note: again, this is obviously not a good way
 	* systemctl enable dhcpcd@wlp62s0.service
  * passwd
- * pacman -Syu grub intel-ucode os-prober (the latter only if other osses are installed, in this case, you also need to mount them, if windows is not detected, pacman -Syu ntfs-3g might do the trick)
+ * pacman -Syu vim grub intel-ucode os-prober (the latter only if other osses are installed, in this case, you also need to mount them, if windows is not detected, pacman -Syu ntfs-3g might do the trick)
  * grub-install --target=i386-pc /dev/sda
  * grub-mkconfig -o /boot/grub/grub.cfg
  * reboot
@@ -48,11 +48,11 @@ See: https://wiki.archlinux.org/index.php/Installation_guide
 ## Create a user
  * useradd -m -G wheel dirk
  * passwd dirk
- * vi /etc/sudoers and uncomment the wheel section
+ * vim /etc/sudoers and uncomment the wheel section
  * log out and log in as dirk
  
 ## Video driver & i3
- * sudo vi /etc/pacman.conf and enable multilib (by uncommenting two lines)
+ * sudo vim /etc/pacman.conf and enable multilib (by uncommenting two lines)
  * sudo pacman -Syu xorg nvidia nvidia-utils lib32-nvidia-utils (I selected all the defaults)
  * sudo pacman -Syu i3-wm terminator lightdm lightdm-gtk-greeter
  * sudo systemctl enable lightdm.service
