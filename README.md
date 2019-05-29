@@ -191,3 +191,6 @@ You can add these commands to i3 config:
 
 ## Fingerprint sensor
 I don't want it... see https://wiki.archlinux.org/index.php/Fingerprint_GUI for more information
+
+## Keyboard RGB (further research is needed, but it works with the following steps)
+* yay -Syu clevo-xsm-wmi clevo-xsm-wmi-dkms clevo-xsm-wmi-util (may be a conflict...)
