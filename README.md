@@ -24,6 +24,8 @@ See: https://wiki.archlinux.org/index.php/Installation_guide
 	* genfstab -U /mnt >> /mnt/etc/fstab
  * Chroot:
 	* arch-chroot /mnt
+ * Make it easier:
+ 	* pacman -Syu vim
  * Locale:
 	* Timezone: ln -sf /usr/share/zoneinfo/Europe/Brussels /etc/localtime
 	* hwclock --systohc
