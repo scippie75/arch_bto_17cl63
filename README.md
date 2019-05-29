@@ -80,6 +80,7 @@ It would now be possible to reboot, but then you will have no wifi. You can eith
 ## NetworkManager (and forticlient support)
 
  * yay -Syu networkmanager network-manager-applet networkmanager-fortisslvpn-git
+ * sudo systemctl enable NetworkManager
  * Add line to i3 config: exec --no-startup-id nm-applet
 
 ## Pulseaudio
