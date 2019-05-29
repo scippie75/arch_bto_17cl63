@@ -74,6 +74,8 @@ It would now be possible to reboot, but then you will have no wifi. You can eith
 ## Make sure you have an i3 config file to edit
  * mkdir ~/.config/i3
  * cp /etc/i3/config ~/.config/i3/config
+ * Edit ~/.config/i3/config and find/replace Mod1 with $mod _:%s/Mod1/$mod/g_
+ * Add a line above: set $mod Mod4
  
 ## NetworkManager (and forticlient support)
 
