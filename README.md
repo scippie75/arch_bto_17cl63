@@ -167,4 +167,6 @@ EndSection
  * yay -Syu eid-mw
  
 ## Close laptop lid configuration (hangs the OS if not configured)
- * sudo vi /etc/systemd/logind.conf and change the defaults (make sure HandleLidSwitch* = ignore)
+ * sudo vi /etc/systemd/logind.conf and change the defaults (make sure HandleLidSwitch* = lock)
+ * yay -Syu xss-lock
+ * add line to ~/.config/i3/config: exec --no-startup-id xss-lock -- i3lock -n (optionally with parameters like -i <image.png>)
