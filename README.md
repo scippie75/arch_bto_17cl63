@@ -38,15 +38,13 @@ See: https://wiki.archlinux.org/index.php/Installation_guide
 		* 127.0.0.1 localhost
 		* ::1 localhost
 		* 127.0.1.1 arch-bto2.frixx-it arch-bto2 (replace 127.0.1.1 with the static ip if there is one - 192.168.60.52)
-	* pacman -Syu wpa_supplicant dhcpcd
-	* wpa_passphrase SSID "password" > /etc/wpa_supplicant/SSID.conf - note: again, this is obviously not a good way
-	* systemctl enable dhcpcd@wlp62s0.service
  * passwd
  * pacman -Syu vim grub intel-ucode os-prober (the latter only if other osses are installed, in this case, you also need to mount them, if windows is not detected, pacman -Syu ntfs-3g might do the trick)
  * grub-install --target=i386-pc /dev/sda
  * grub-mkconfig -o /boot/grub/grub.cfg
- * reboot
- 
+
+It would now be possible to reboot, but then you will have no wifi. Install netctl (pacman -Syu netctl) to ensure that wifi-menu is available. But we will use NetworkManager later on, so if you go on, you don't need it.
+
 ## Create a user
  * useradd -m -G wheel dirk
  * passwd dirk
@@ -58,10 +56,10 @@ See: https://wiki.archlinux.org/index.php/Installation_guide
  * sudo pacman -Syu xorg nvidia nvidia-utils lib32-nvidia-utils (I selected all the defaults)
  * sudo pacman -Syu i3-wm terminator lightdm lightdm-gtk-greeter
  * sudo systemctl enable lightdm.service
- * reboot (you should now be able to log in in i3)
+
+It would now be possible to reboot, but then you will have no wifi. You can either install netctl to ensure that wifi-menu is available, or you could wait a while to make sure NetworkManager is installed.
 
 ## Make life a bit easier:
- * sudo pacman -Syu vim
  * sudo ln -sf /usr/bin/vim /usr/bin/vi
 
 ## Make life easier with yay:
@@ -71,8 +69,15 @@ See: https://wiki.archlinux.org/index.php/Installation_guide
  * makepkg -cris
  * cd ..
  * rm -rf yay
+ 
+## NetworkManager (and forticlient support)
 
-# Make i3 a little more beautiful
+ * yay -Syu networkmanager network-manager-applet networkmanager-forticlientvpn-git
+ * Add line to i3 config: exec --no-startup-id nm-applet
+ 
+You should now be able to reboot and use wifi, but if you go on, you can make sure that i3 boots up nice
+
+## Make i3 a little more beautiful
  * yay -Syu polybar rofi
  * mkdir ~/.config/polybar
  * cp /usr/share/doc/polybar/config ~/.config/polybar/config
@@ -103,9 +108,3 @@ bindsym XF86AudioRaiseVolume exec amixer -D pulse -q set Master playback 5%+ unm
 bindsym XF86AudioLowerVolume exec amixer -D pulse -q set Master playback 5%- unmute
 bindsym XF86AudioMute exec amixer -D pulse -q set Master toggle
 ```
-
-# NetworkManager (and forticlient support)
-
- * yay -Syu networkmanager network-manager-applet networkmanager-forticlientvpn-git
- * Add line to i3 config: exec --no-startup-id nm-applet
- 
