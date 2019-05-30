@@ -5,6 +5,8 @@ Disclaimer: this document is Work In Progress. Do not use! I am not responsible 
 
 ## System installation
 
+For encrypted disk: https://www.howtoforge.com/tutorial/how-to-install-arch-linux-with-full-disk-encryption/
+
 See: https://wiki.archlinux.org/index.php/Installation_guide
  * Boot with the Arch iso
  * Set up wireless lan
