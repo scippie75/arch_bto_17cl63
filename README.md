@@ -144,6 +144,16 @@ Section "InputClass"
 EndSection
 ```
 
+## Shift-numpad keys the microsoft-way (not temporary numlock) UNTESTED!
+ * Edit /etc/X11/xorg.conf.d/40-keyboard.conf
+```
+Section "InputClass"
+        Identifier "libinput keyboard catchall"
+        Driver "libinput"
+	Option "XkbOptions" "numpad:microsoft"
+EndSection
+```
+
 ## SSD periodic TRIM
  * yay -Syu util-linux
  * sudo systemctl enable fstrim.timer
