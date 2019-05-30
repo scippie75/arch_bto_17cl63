@@ -210,3 +210,6 @@ I don't want it... see https://wiki.archlinux.org/index.php/Fingerprint_GUI for 
  * sudo systemctl start clevo-xsm-wmi
  * sudo systemctl enable clevo-xsm-wmi
 See https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/src/master/module/ABI/testing/sysfs-driver-clevo-xsm-wmi for more information on how to manually change the colors
+
+## Uniform look between QT and GTK applications
+ * yay -Syu gtk3 gnome-themes-extra adwaita-qt4 adwaita-qt5
