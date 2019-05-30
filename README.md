@@ -161,7 +161,7 @@ EndSection
   * Make sure lxpolkit is started at boot (i3-config)
 
 ## Thunar - file explorer
- * yay -Syu thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler ffmpegthumbnailer
+ * yay -Syu thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler ffmpegthumbnailer gvfs gvfs-smb
  * yay -Syu exfat-utils
 
 ## EID reader
