@@ -156,8 +156,13 @@ EndSection
  * sudo systemctl start org.cupscupsd.service
  * open browser on localhost:631 and follow the user interface to add the Lexmark CX310dn printer (find the PPD in Dropbox under Linux folder)
 
+## Polkit
+  * yay -Syu polkit lxsession
+  * Make sure lxpolkit is started at boot (i3-config)
+
 ## Thunar - file explorer
  * yay -Syu thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler ffmpegthumbnailer
+ * yay -Syu exfat-utils
 
 ## EID reader
  * yay -Syu ccid
@@ -205,8 +210,3 @@ I don't want it... see https://wiki.archlinux.org/index.php/Fingerprint_GUI for 
  * sudo systemctl start clevo-xsm-wmi
  * sudo systemctl enable clevo-xsm-wmi
 See https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/src/master/module/ABI/testing/sysfs-driver-clevo-xsm-wmi for more information on how to manually change the colors
-
-## Polkit
-  * yay -Syu polkit lxsession
-  * Make sure lxpolkit is started at boot (i3-config)
-  
