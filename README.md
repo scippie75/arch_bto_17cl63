@@ -183,6 +183,13 @@ load-module module-bluetooth-discover
 ```
 I needed a reboot after this
 
+## Nicer fonts (for example, in firefox, see https://www.reddit.com/r/archlinux/comments/5r5ep8/make_your_arch_fonts_beautiful_easily/ for more information)
+ * yay -Syu ttf-dejavu ttf-liberation noto-fonts
+ * sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
+ * sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
+ * sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
+ * vi /etc/profile.d/freetype2.sh and uncomment _export FREETYPE_PROPERTIES="truetype:interpreter-version=40"_
+
 ## Configure power management
 You can add these commands to i3 config:
  * xset s 3600 3600 to let screen go blank after 1 hour
@@ -197,3 +204,8 @@ I don't want it... see https://wiki.archlinux.org/index.php/Fingerprint_GUI for 
  * sudo systemctl start clevo-xsm-wmi
  * sudo systemctl enable clevo-xsm-wmi
 See https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/src/master/module/ABI/testing/sysfs-driver-clevo-xsm-wmi for more information on how to manually change the colors
+
+## Polkit
+  * yay -Syu polkit lxsession
+  * Make sure lxpolkit is started at boot (i3-config)
+  
