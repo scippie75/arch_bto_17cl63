@@ -144,7 +144,7 @@ Section "InputClass"
 EndSection
 ```
 
-## Shift-numpad keys the microsoft-way (not temporary numlock) UNTESTED!
+## Shift-numpad keys the microsoft-way (not temporary numlock)
  * Edit /etc/X11/xorg.conf.d/40-keyboard.conf
 ```
 Section "InputClass"
