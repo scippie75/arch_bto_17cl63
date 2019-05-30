@@ -183,7 +183,8 @@ load-module module-bluetooth-discover
 ```
 I needed a reboot after this
 
-## Nicer fonts (for example, in firefox, see https://www.reddit.com/r/archlinux/comments/5r5ep8/make_your_arch_fonts_beautiful_easily/ for more information)
+## Nicer fonts (for example, in firefox)
+_see https://www.reddit.com/r/archlinux/comments/5r5ep8/make_your_arch_fonts_beautiful_easily/ for more information)_
  * yay -Syu ttf-dejavu ttf-liberation noto-fonts
  * sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
  * sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
