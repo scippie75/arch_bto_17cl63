@@ -232,3 +232,22 @@ See https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/src/master/module/ABI/te
  * qtconfig-qt4 -> select adwaita/breeze
  * lxappearance
  
+## My simple .vimrc config file for developers
+```
+syntax on
+set tabstop=2 shiftwidth=2 expandtab
+set autoindent
+set number
+map <F5> :tabp<CR>
+map <F6> :tabn<CR>
+map <F9> :!./m<CR>
+map <F10> :!./%<CR>
+let &path.="/home/dirk/projects/dirk/common,/home/dirk/projects/dirk/sp33d,./proj/tmp,./shaders,"
+au BufRead *.fs set ft=
+au BufRead *.vs set ft=
+
+" Show tabs in light color
+hi SpecialKey ctermfg=lightgray
+set listchars=tab:>-
+set list
+```
