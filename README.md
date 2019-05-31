@@ -228,7 +228,7 @@ I don't want it... see https://wiki.archlinux.org/index.php/Fingerprint_GUI for 
 See https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/src/master/module/ABI/testing/sysfs-driver-clevo-xsm-wmi for more information on how to manually change the colors
 
 ## Uniform look between QT and GTK applications
- * yay -Syu gtk3 gnome-themes-extra adwaita-qt4 adwaita-qt5 qt5ct
- * qtconfig-qt4 -> select adwaita
- * qt5ct -> select adwaita
+ * yay -Syu gtk3 gnome-themes-extra adwaita-qt4 adwaita-qt5 breeze breeze-gtk lxappearance
+ * qtconfig-qt4 -> select adwaita/breeze
+ * lxappearance
  
