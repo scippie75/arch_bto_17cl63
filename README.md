@@ -6,7 +6,9 @@ Disclaimer: this document is Work In Progress. Do not use! I am not responsible 
 ## System installation
 
 For encrypted disk: https://www.howtoforge.com/tutorial/how-to-install-arch-linux-with-full-disk-encryption/
+
 For encrypted partition: https://www.howtoforge.com/tutorial/how-to-encrypt-a-linux-partition-with-dm-crypt-luks/
+
 For auto-mounting an encrypted partition: https://blog.tinned-software.net/automount-a-luks-encrypted-volume-on-system-start/
 
 See: https://wiki.archlinux.org/index.php/Installation_guide
