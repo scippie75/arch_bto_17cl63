@@ -242,7 +242,6 @@ map <F5> :tabp<CR>
 map <F6> :tabn<CR>
 map <F9> :!./m<CR>
 map <F10> :!./%<CR>
-let &path.="/home/dirk/projects/dirk/common,/home/dirk/projects/dirk/sp33d,./proj/tmp,./shaders,"
 au BufRead *.fs set ft=
 au BufRead *.vs set ft=
 
