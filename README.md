@@ -222,7 +222,7 @@ You can add these commands to i3 config:
 I don't want it... see https://wiki.archlinux.org/index.php/Fingerprint_GUI for more information
 
 ## Keyboard RGB
- * yay -Syu clevo-xsm-wmi clevo-xsm-wmi-dkms clevo-xsm-wmi-util (may not need all or even give a conflict...)
+ * yay -Syu clevo-xsm-wmi-util
  * sudo systemctl start clevo-xsm-wmi
  * sudo systemctl enable clevo-xsm-wmi
 See https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/src/master/module/ABI/testing/sysfs-driver-clevo-xsm-wmi for more information on how to manually change the colors
