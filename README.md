@@ -250,3 +250,8 @@ hi SpecialKey ctermfg=lightgray
 set listchars=tab:>-
 set list
 ```
+
+## Fonts
+
+Here are several fonts I found interesting to have:
+ * yay -Syu terminus-font bdf-unifont font-bh-ttf ttf-croscore ttf-dejavu noto-fonts ttf-liberation ttf-ubuntu-font-family ttf-ms-fonts ttf-vista-fonts ttf-anonymous-pro ttf-freefont ttf-freefont ttf-tahoma
