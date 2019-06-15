@@ -254,6 +254,9 @@ set list
  * yay -Syu vim-a -> this makes an easy switcher between c/h file, add *map <F8> :A<CR>* in .vimrc
  * yay -Syu vim-airline powerline powerline-fonts -> this makes a nice toolbar, add *let g:airline_powerline_fonts = 1* to .vimrc
 
+## Correct syntax highlighting in vim for c11 and c++11
+ * see https://www.vim.org/scripts/script.php?script_id=3797
+
 ## Powerline in bash
  * yay -Syu powerline powerline-fonts
  * Change ~/.bashrc:
