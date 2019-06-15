@@ -252,7 +252,17 @@ set list
 ```
 ## More vim stuff
  * yay -Syu vim-a -> this makes an easy switcher between c/h file, add *map <F8> :A<CR>* in .vimrc
- * yay -Syu vim-airline powerline -> this makes a nice toolbar, add *let g:airline_powerline_fonts = 1* to .vimrc
+ * yay -Syu vim-airline powerline powerline-fonts -> this makes a nice toolbar, add *let g:airline_powerline_fonts = 1* to .vimrc
+
+## Powerline in bash
+ * yay -Syu powerline powerline-fonts
+ * Change ~/.bashrc:
+```
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/share/powerline/bindings/bash/powerline.sh
+```
 
 ## Fonts
 
