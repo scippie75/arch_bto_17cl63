@@ -250,6 +250,9 @@ hi SpecialKey ctermfg=lightgray
 set listchars=tab:>-
 set list
 ```
+## More vim stuff
+ * yay -Syu vim-a -> this makes an easy switcher between c/h file, add *map <F8> :A<CR>* in .vimrc
+ * yay -Syu vim-airline powerline -> this makes a nice toolbar, add *let g:airline_powerline_fonts = 1* to .vimrc
 
 ## Fonts
 
