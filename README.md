@@ -323,3 +323,8 @@ Here are several fonts I found interesting to have:
 	}
  * Copy default config file for i3blocks: cp /etc/i3blocks.conf ~/.config/i3/.
  * vim ~/.config/i3/i3blocks.conf and configure it
+ -* Install arc-theme (https://github.com/horst3180/Arc-theme) with yay -Syu arc-gtk-theme (or gtk-theme-arc-git (AUR))-
+ -* Install arc-firefox-theme (https://github.com/horst3180/arc-firefox-theme) by going to the website, click releases and click the arc-darker-firefox-theme-....xpi and allow firefox to install it...-
+ * The firefox theme seems to have been replaced to: https://www.reddit.com/r/firefox/comments/8q1725/color_arcdarker/
+ 
+ 
