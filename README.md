@@ -114,7 +114,18 @@ echo "Polybar launched..."
  * chmod +x ~/.config/polybar/launch.sh
  * vi ~/.config/polybar/config and change [bar/example] to [bar/mybar], optionally other things as well
  -* vi ~/.config/i3/config and add/update the following lines: bindsym $mod+space exec rofi -show run -theme arthur-
- * vi ~/.config/i3/config and add/update the following lines: bindsym $mod+space exec --no-startup-id rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+ * Create ~/.config/rofi/rofi.sh with:
+```
+#!/bin/sh
+
+bg_color=#2f343f
+text_color=#f3f4f5
+htext_color=#9575cd
+
+rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -color-window "$bg_color, $bg_color, $bg_color" -color-normal "$bg_color, $text_color, $bg_color, $bg_color, $htext_color" -font "System San Francisco Display 16"
+```
+ * Make it executable: chmod +x ~/.config/rofi/rofi.sh
+ * bindsym $mod+space exec --no-startup-id $HOME/.config/rofi/rofi.sh
  * disable the change focus between tiling/floating window binding
  * disable the whole i3bar section
  * exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -330,5 +341,5 @@ Here are several fonts I found interesting to have:
  * Install arc-theme (https://github.com/horst3180/Arc-theme) with yay -Syu arc-gtk-theme (or gtk-theme-arc-git (AUR))
  * Install moka icon theme: yay -Syu moka-icon-theme
  * Start lxappearance and select the Arc-Darker theme, go to icon themes tab and select Moka (or Faba which looks better in my opinion)
- 
- 
+ * Install compton: yay -Syu picom
+ * And make sure it starts with i3: exec_always compton
