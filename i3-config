@@ -176,6 +176,8 @@ smart_gaps on
 for_window [class="Terminator" title="Terminator Preferences"] floating enable
 for_window [class="Steam" title="Friends List"] floating enable
 for_window [class="Pavucontrol"] floating enable
+for_window [class="SpeedCrunch"] floating enable
+for_window [class="Qemu-system-x86_64"] floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
