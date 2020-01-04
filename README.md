@@ -1,4 +1,4 @@
-# arch_bto_17cl63
+/# arch_bto_17cl63
 My installation instructions on installing Arch Linux with i3 on my BTO x-book 17cl63 (2) notebook
 
 Disclaimer: this document is Work In Progress. Do not use! I am not responsible for any damage or loss of business or profits or whatever. If you care about not breaking things: *DO NOT USE!*
@@ -113,7 +113,8 @@ echo "Polybar launched..."
 ```
  * chmod +x ~/.config/polybar/launch.sh
  * vi ~/.config/polybar/config and change [bar/example] to [bar/mybar], optionally other things as well
- * vi ~/.config/i3/config and add/update the following lines: bindsym $mod+space exec rofi -show run -theme arthur
+ -* vi ~/.config/i3/config and add/update the following lines: bindsym $mod+space exec rofi -show run -theme arthur-
+ * vi ~/.config/i3/config and add/update the following lines: bindsym $mod+space exec --no-startup-id rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
  * disable the change focus between tiling/floating window binding
  * disable the whole i3bar section
  * exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -179,6 +180,7 @@ EndSection
 ## Thunar - file explorer
  * yay -Syu thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler ffmpegthumbnailer gvfs gvfs-smb
  * yay -Syu exfat-utils
+ * yay -Syu gnome-icon-theme gnome-icon-theme-extras gnome-icon-theme-symbolic
 
 ## EID reader
  * yay -Syu ccid
@@ -323,8 +325,10 @@ Here are several fonts I found interesting to have:
 	}
  * Copy default config file for i3blocks: cp /etc/i3blocks.conf ~/.config/i3/.
  * vim ~/.config/i3/i3blocks.conf and configure it
- -* Install arc-theme (https://github.com/horst3180/Arc-theme) with yay -Syu arc-gtk-theme (or gtk-theme-arc-git (AUR))-
  -* Install arc-firefox-theme (https://github.com/horst3180/arc-firefox-theme) by going to the website, click releases and click the arc-darker-firefox-theme-....xpi and allow firefox to install it...-
  * The firefox theme seems to have been replaced to: https://www.reddit.com/r/firefox/comments/8q1725/color_arcdarker/
+ * Install arc-theme (https://github.com/horst3180/Arc-theme) with yay -Syu arc-gtk-theme (or gtk-theme-arc-git (AUR))
+ * Install moka icon theme: yay -Syu moka-icon-theme
+ * Start lxappearance and select the Arc-Darker theme, go to icon themes tab and select Moka (or Faba which looks better in my opinion)
  
  
