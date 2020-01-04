@@ -271,3 +271,19 @@ POWERLINE_BASH_SELECT=1
 
 Here are several fonts I found interesting to have:
  * yay -Syu terminus-font bdf-unifont font-bh-ttf ttf-croscore ttf-dejavu noto-fonts ttf-liberation ttf-ubuntu-font-family ttf-ms-fonts ttf-vista-fonts ttf-anonymous-pro ttf-freefont ttf-freefont ttf-tahoma
+
+## New additions (need to be tested and placed in the correct place)
+
+* yay -Syu playerctl
+* Add following to i3 config:
+	bindsym XF86AudioPlay exec playerctl play
+	bindsym XF86AudioPause exec playerctl pause
+	bindsym XF86AudioNext exec playerctl next
+	bindsym XF86AudioPrevious exec playerctl previous
+* yay -Syu arandr
+* run arandr and set up monitors, save to file ~/.screenlayout/...
+* cat ~/.screenlayout/... and copy this
+* Add following to i3 config: exec_always --no-startup-id [paste]
+* Download font awesome: https://github.com/FortAwesome/Font-Awesome/releases
+* Unzip and copy .ttf files to ~/.fonts
+* Open the font awesome cheat sheet and copy/paste the icon you wish to a workspace description
