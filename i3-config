@@ -179,6 +179,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="SpeedCrunch"] floating enable
 for_window [class="Qemu-system-x86_64"] floating enable
 for_window [class="KeePass2"] floating enable
+for_window [class="Thunderbird" instance="Msgcompose"] floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
