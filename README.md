@@ -204,6 +204,14 @@ EndSection
  * sudo vi /etc/systemd/logind.conf and change the defaults (make sure HandleLidSwitch* = lock)
  * yay -Syu xss-lock
  * add line to ~/.config/i3/config: exec --no-startup-id xss-lock -- i3lock -n (optionally with parameters like -i <image.png>)
+ * Improve this optionally by moving the functionality to a lock.sh script with:
+```
+#!/bin/sh
+
+bg_color=#2f343f
+
+i3lock -n --color "$bg_color"
+```
 
 ## Bluetooth
  * yay -Syu bluez bluez-utils pulseaudio-bluetooth
