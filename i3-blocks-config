@@ -43,11 +43,11 @@ signal=10
 ### SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
 ##SUBSCRIBE=0
 
-[caps-lock]
-label= 
-command=xset -q | grep Caps | awk '{ print $2, $3, $4 }'
-interval=1
-signal=10
+#[caps-lock]
+#label= 
+#command=xset -q | grep Caps | awk '{ print $2, $3, $4 }'
+#interval=1
+#signal=10
 
 [disk]
 label= /: 
@@ -82,7 +82,7 @@ interval=10
 SUBSYSTEMS=="usb", RUN+="/usr/bin/pkill -RTMIN+1 i3blocks"
 
 [load_average]
-label= 
+label= 
 command=$SCRIPT_DIR/load_average
 interval=10
 
@@ -110,10 +110,10 @@ label=
 #INTERFACE=wlan0
 interval=10
 
-[date]
-label= 
-command=date '+%Y-%m-%d'
-interval=3600
+#[date]
+#label= 
+#command=date '+%Y-%m-%d'
+#interval=3600
 
 [time]
 label= 
