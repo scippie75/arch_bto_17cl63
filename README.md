@@ -358,3 +358,9 @@ Here are several fonts I found interesting to have:
 * Start lxappearance and select the Arc-Darker theme, go to icon themes tab and select Moka (or Faba which looks better in my opinion)
 * Install compton: yay -Syu picom
 * And make sure it starts with i3: exec --no-startup-id pycom -f
+
+## i3blocks
+
+For i3blocks, a lot of scripts and dependencies are needed. Copy the scripts to ~/.i3blocks/blocklets/...
+For dependencies, check out https://github.com/vivien/i3blocks-contrib or:
+* For calendar, you need: yay -Syu yad xdotool
