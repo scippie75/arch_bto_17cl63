@@ -28,8 +28,9 @@
 ;alert = #bd2c40
 background = #2f343f
 background-alt = #2f343f
-foreground = #f3f4f5
-foreground-alt = #f3f4f5
+foreground = #a2a3a4
+foreground-alt = #a2a3a4
+;#f3f4f5
 primary = #ffb52a
 secondary = #e60053
 alert = #e53935
