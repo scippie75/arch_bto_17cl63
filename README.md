@@ -297,10 +297,12 @@ Here are several fonts I found interesting to have:
 
 * yay -Syu playerctl
 * Add following to i3 config:
+```
 	bindsym XF86AudioPlay exec playerctl play
 	bindsym XF86AudioPause exec playerctl pause
 	bindsym XF86AudioNext exec playerctl next
 	bindsym XF86AudioPrevious exec playerctl previous
+```
 * yay -Syu arandr
 * run arandr and set up monitors, save to file ~/.screenlayout/...
 * cat ~/.screenlayout/... and copy this
@@ -316,21 +318,26 @@ Here are several fonts I found interesting to have:
 * Remove polybar if installed (remove startup line in i3 config)
 * yay -Syu i3blocks i3blocks-contrib
 * Add the following above the bar section in the i3 config
+```
 	set $bg-color                  #2f343f
 	set $inactive-bg-color         #2f343f
 	set $text-color                #f3f4f5
 	set $inactive-text-color       #676e7d
 	set $urgent-bg-color           #e53935
 	set $ugly                      #ff00ff
- * Use them
+```
+* Use them
+```
 	# colors                border             background         text                 indicator
 	client.focused          $bg-color          $bg-color          $text-color          $ugly
 	client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $ugly
 	client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $ugly
 	client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $ugly
- * Add this to hide the (now ugly) edge borders by adding this to the i3 config: hide_edge_borders both
- * Change the bar section in i3 config to
- 	bar {
+```
+* Add this to hide the (now ugly) edge borders by adding this to the i3 config: hide_edge_borders both
+* Change the bar section in i3 config to
+```
+	bar {
 		status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
 		position top
 		colors {
@@ -342,12 +349,12 @@ Here are several fonts I found interesting to have:
 			urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 		}
 	}
- * Copy default config file for i3blocks: cp /etc/i3blocks.conf ~/.config/i3/.
- * vim ~/.config/i3/i3blocks.conf and configure it
- -* Install arc-firefox-theme (https://github.com/horst3180/arc-firefox-theme) by going to the website, click releases and click the arc-darker-firefox-theme-....xpi and allow firefox to install it...-
- * The firefox theme seems to have been replaced to: https://www.reddit.com/r/firefox/comments/8q1725/color_arcdarker/
- * Install arc-theme (https://github.com/horst3180/Arc-theme) with yay -Syu arc-gtk-theme (or gtk-theme-arc-git (AUR))
- * Install moka icon theme: yay -Syu moka-icon-theme
- * Start lxappearance and select the Arc-Darker theme, go to icon themes tab and select Moka (or Faba which looks better in my opinion)
- * Install compton: yay -Syu picom
- * And make sure it starts with i3: exec --no-startup-id pycom -f
+```
+* Copy default config file for i3blocks: cp /etc/i3blocks.conf ~/.config/i3/.
+* vim ~/.config/i3/i3blocks.conf and configure it
+* The firefox theme seems to have been replaced to: https://www.reddit.com/r/firefox/comments/8q1725/color_arcdarker/
+* Install arc-theme (https://github.com/horst3180/Arc-theme) with yay -Syu arc-gtk-theme (or gtk-theme-arc-git (AUR))
+* Install moka icon theme: yay -Syu moka-icon-theme
+* Start lxappearance and select the Arc-Darker theme, go to icon themes tab and select Moka (or Faba which looks better in my opinion)
+* Install compton: yay -Syu picom
+* And make sure it starts with i3: exec --no-startup-id pycom -f
