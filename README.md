@@ -287,3 +287,39 @@ Here are several fonts I found interesting to have:
 * Download font awesome: https://github.com/FortAwesome/Font-Awesome/releases
 * Unzip and copy .ttf files to ~/.fonts
 * Open the font awesome cheat sheet and copy/paste the icon you wish to a workspace description
+* Download font YosemitySanFransisco: https://github.com/supermarin/YosemiteSanFranciscoFont
+* Unzip and copy .ttf files to ~/.fonts
+* Change font line in i3 config to: font pango:System San Fransisco Display 11
+* Start lxappearance (yay -Syu lx-appearance if not already installed) and change the font to SFNS Display 11
+* Install font infinality for nicer font rendering: yay -Syu fontconfig-infinality
+* Remove polybar if installed (remove startup line in i3 config)
+* yay -Syu i3blocks
+* Add the following above the bar section in the i3 config
+	set $bg-color                  #2f343f
+	set $inactive-bg-color         #2f343f
+	set $text-color                #f3f4f5
+	set $inactive-text-color       #676e7d
+	set $urgent-bg-color           #e53935
+	set $ugly                      #ff00ff
+ * Use them
+	# colors                border             background         text                 indicator
+	client.focused          $bg-color          $bg-color          $text-color          $ugly
+	client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $ugly
+	client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $ugly
+	client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $ugly
+ * Add this to hide the (now ugly) edge borders by adding this to the i3 config: hide_edge_borders both
+ * Change the bar section in i3 config to
+ 	bar {
+		status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
+		position top
+		colors {
+			background $bg-color
+			separator #757575
+			# Bar colors       border             background         text
+			focused_workspace  $bg-color          $bg-color          $text-color
+			inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+			urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+		}
+	}
+ * Copy default config file for i3blocks: cp /etc/i3blocks.conf ~/.config/i3/.
+ * vim ~/.config/i3/i3blocks.conf and configure it
