@@ -314,7 +314,7 @@ Here are several fonts I found interesting to have:
 * Start lxappearance (yay -Syu lx-appearance if not already installed) and change the font to SFNS Display 11
 * Install font infinality for nicer font rendering: yay -Syu fontconfig-infinality
 * Remove polybar if installed (remove startup line in i3 config)
-* yay -Syu i3blocks
+* yay -Syu i3blocks i3blocks-contrib
 * Add the following above the bar section in the i3 config
 	set $bg-color                  #2f343f
 	set $inactive-bg-color         #2f343f
