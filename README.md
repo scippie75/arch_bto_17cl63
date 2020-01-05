@@ -364,3 +364,4 @@ Here are several fonts I found interesting to have:
 For i3blocks, a lot of scripts and dependencies are needed. Copy the scripts to ~/.i3blocks/blocklets/...
 For dependencies, check out https://github.com/vivien/i3blocks-contrib or:
 * For calendar, you need: yay -Syu yad xdotool
+* For battery, you need: yay -Syu acpi
