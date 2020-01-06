@@ -357,7 +357,7 @@ Here are several fonts I found interesting to have:
 * Install moka icon theme: yay -Syu moka-icon-theme
 * Start lxappearance and select the Arc-Darker theme, go to icon themes tab and select Moka (or Faba which looks better in my opinion)
 * Install compton: yay -Syu picom
-* And make sure it starts with i3: exec --no-startup-id pycom -f
+* And make sure it starts with i3: exec --no-startup-id picom -f
 
 ## i3blocks
 
