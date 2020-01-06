@@ -313,7 +313,7 @@ Here are several fonts I found interesting to have:
 * Download font YosemitySanFransisco: https://github.com/supermarin/YosemiteSanFranciscoFont
 * Unzip and copy .ttf files to ~/.fonts
 * Change font line in i3 config to: font pango:System San Fransisco Display 11
-* Start lxappearance (yay -Syu lx-appearance if not already installed) and change the font to SFNS Display 11
+* Start lxappearance (yay -Syu lxappearance if not already installed) and change the font to SFNS Display 11
 * Install font infinality for nicer font rendering: yay -Syu fontconfig-infinality
 * Remove polybar if installed (remove startup line in i3 config)
 * yay -Syu i3blocks i3blocks-contrib
