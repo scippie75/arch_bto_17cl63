@@ -2,6 +2,7 @@
 My installation instructions on installing Arch Linux with i3 on my BTO x-book 17cl63 (2) notebook
 
 Disclaimer: this document is Work In Progress. Do not use! I am not responsible for any damage or loss of business or profits or whatever. If you care about not breaking things: *DO NOT USE!*
+Especially since I recently saw that several things have changed, make sure you use the Arch Wiki as your guide!
 
 ## System installation
 
