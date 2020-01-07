@@ -99,8 +99,8 @@ interval=10
 #T_CRIT=90
 
 [battery]
-command=battery.sh
-interval=10
+command=$SCRIPT_DIR/battery.py
+interval=1
 
 #SENSOR_CHIP=""
 
