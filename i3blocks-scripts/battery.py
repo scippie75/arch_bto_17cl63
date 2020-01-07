@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import sys
 import subprocess
 import time, datetime
 
@@ -41,10 +42,14 @@ print("%s %s %s" %(label, percentage, msg))
 print("%s %s %s" %(label, percentage, msg))
 
 if val < 20:
-  print("#FF0000\n")
+  print("#FF0000")
 elif val < 40:
-  print("#FFAE00\n")
+  print("#FFAE00")
 elif val < 60:
-  print("#FFF600\n")
+  print("#FFF600")
 elif val < 85:
-  print("#A8FF00\n")
+  print("#A8FF00")
+
+if val < 15:
+  sys.exit(33)
+sys.exit(0)
