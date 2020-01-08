@@ -2,6 +2,7 @@
 My installation instructions on installing Arch Linux with i3 on my BTO x-book 17cl63 (2) notebook
 
 Disclaimer: this document is Work In Progress. Do not use! I am not responsible for any damage or loss of business or profits or whatever. If you care about not breaking things: *DO NOT USE!*
+Especially since I recently saw that several things have changed, make sure you use the Arch Wiki as your guide!
 
 ## System installation
 
@@ -113,7 +114,19 @@ echo "Polybar launched..."
 ```
  * chmod +x ~/.config/polybar/launch.sh
  * vi ~/.config/polybar/config and change [bar/example] to [bar/mybar], optionally other things as well
- * vi ~/.config/i3/config and add/update the following lines: bindsym $mod+space exec rofi -show run -theme arthur
+ -* vi ~/.config/i3/config and add/update the following lines: bindsym $mod+space exec rofi -show run -theme arthur-
+ * Create ~/.config/rofi/rofi.sh with:
+```
+#!/bin/sh
+
+bg_color=#2f343f
+text_color=#f3f4f5
+htext_color=#9575cd
+
+rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -color-window "$bg_color, $bg_color, $bg_color" -color-normal "$bg_color, $text_color, $bg_color, $bg_color, $htext_color" -font "System San Francisco Display 16"
+```
+ * Make it executable: chmod +x ~/.config/rofi/rofi.sh
+ * bindsym $mod+space exec --no-startup-id $HOME/.config/rofi/rofi.sh
  * disable the change focus between tiling/floating window binding
  * disable the whole i3bar section
  * exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -179,6 +192,7 @@ EndSection
 ## Thunar - file explorer
  * yay -Syu thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler ffmpegthumbnailer gvfs gvfs-smb
  * yay -Syu exfat-utils
+ * yay -Syu gnome-icon-theme gnome-icon-theme-extras gnome-icon-theme-symbolic
 
 ## EID reader
  * yay -Syu ccid
@@ -191,6 +205,14 @@ EndSection
  * sudo vi /etc/systemd/logind.conf and change the defaults (make sure HandleLidSwitch* = lock)
  * yay -Syu xss-lock
  * add line to ~/.config/i3/config: exec --no-startup-id xss-lock -- i3lock -n (optionally with parameters like -i <image.png>)
+ * Improve this optionally by moving the functionality to a lock.sh script with:
+```
+#!/bin/sh
+
+bg_color=#2f343f
+
+i3lock -n --color "$bg_color"
+```
 
 ## Bluetooth
  * yay -Syu bluez bluez-utils pulseaudio-bluetooth
@@ -250,3 +272,97 @@ hi SpecialKey ctermfg=lightgray
 set listchars=tab:>-
 set list
 ```
+## More vim stuff
+ * yay -Syu vim-a -> this makes an easy switcher between c/h file, add *map <F8> :A<CR>* in .vimrc
+ * yay -Syu vim-airline powerline powerline-fonts -> this makes a nice toolbar, add *let g:airline_powerline_fonts = 1* to .vimrc
+
+## Correct syntax highlighting in vim for c11 and c++11
+ * see https://www.vim.org/scripts/script.php?script_id=3797
+
+## Powerline in bash
+ * yay -Syu powerline powerline-fonts
+ * Change ~/.bashrc:
+```
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/share/powerline/bindings/bash/powerline.sh
+```
+
+## Fonts
+
+Here are several fonts I found interesting to have:
+ * yay -Syu terminus-font bdf-unifont font-bh-ttf ttf-croscore ttf-dejavu noto-fonts ttf-liberation ttf-ubuntu-font-family ttf-ms-fonts ttf-vista-fonts ttf-anonymous-pro ttf-freefont ttf-freefont ttf-tahoma
+
+## New additions (need to be tested and placed in the correct place)
+
+* yay -Syu playerctl
+* Add following to i3 config:
+```
+	bindsym XF86AudioPlay exec playerctl play
+	bindsym XF86AudioPause exec playerctl pause
+	bindsym XF86AudioNext exec playerctl next
+	bindsym XF86AudioPrevious exec playerctl previous
+```
+* yay -Syu arandr
+* run arandr and set up monitors, save to file ~/.screenlayout/...
+* cat ~/.screenlayout/... and copy this
+* Add following to i3 config: exec_always --no-startup-id [paste]
+* Download font awesome: https://github.com/FortAwesome/Font-Awesome/releases
+* Unzip and copy .ttf files to ~/.fonts
+* Open the font awesome cheat sheet and copy/paste the icon you wish to a workspace description
+* Download font YosemitySanFransisco: https://github.com/supermarin/YosemiteSanFranciscoFont
+* Unzip and copy .ttf files to ~/.fonts
+* Change font line in i3 config to: font pango:System San Fransisco Display 11
+* Start lxappearance (yay -Syu lxappearance if not already installed) and change the font to SFNS Display 11
+* Install font infinality for nicer font rendering: yay -Syu fontconfig-infinality
+* Remove polybar if installed (remove startup line in i3 config)
+* yay -Syu i3blocks i3blocks-contrib
+* Add the following above the bar section in the i3 config
+```
+	set $bg-color                  #2f343f
+	set $inactive-bg-color         #2f343f
+	set $text-color                #f3f4f5
+	set $inactive-text-color       #676e7d
+	set $urgent-bg-color           #e53935
+	set $ugly                      #ff00ff
+```
+* Use them
+```
+	# colors                border             background         text                 indicator
+	client.focused          $bg-color          $bg-color          $text-color          $ugly
+	client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $ugly
+	client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $ugly
+	client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $ugly
+```
+* Add this to hide the (now ugly) edge borders by adding this to the i3 config: hide_edge_borders both
+* Change the bar section in i3 config to
+```
+	bar {
+		status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
+		position top
+		colors {
+			background $bg-color
+			separator #757575
+			# Bar colors       border             background         text
+			focused_workspace  $bg-color          $bg-color          $text-color
+			inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+			urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+		}
+	}
+```
+* Copy default config file for i3blocks: cp /etc/i3blocks.conf ~/.config/i3/.
+* vim ~/.config/i3/i3blocks.conf and configure it
+* The firefox theme seems to have been replaced to: https://www.reddit.com/r/firefox/comments/8q1725/color_arcdarker/
+* Install arc-theme (https://github.com/horst3180/Arc-theme) with yay -Syu arc-gtk-theme (or gtk-theme-arc-git (AUR))
+* Install moka icon theme: yay -Syu moka-icon-theme
+* Start lxappearance and select the Arc-Darker theme, go to icon themes tab and select Moka (or Faba which looks better in my opinion)
+* Install compton: yay -Syu picom
+* And make sure it starts with i3: exec --no-startup-id picom -f
+
+## i3blocks
+
+For i3blocks, a lot of scripts and dependencies are needed. Copy the scripts to ~/.i3blocks/blocklets/...
+For dependencies, check out https://github.com/vivien/i3blocks-contrib or:
+* For calendar, you need: yay -Syu yad xdotool
+* For battery, you need: yay -Syu acpi
