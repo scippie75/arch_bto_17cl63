@@ -278,6 +278,13 @@ set list
 
 ## Correct syntax highlighting in vim for c11 and c++11
  * see https://www.vim.org/scripts/script.php?script_id=3797
+ 
+## Power management
+This is very important. I destroyed my battery on my other laptop by not having configured this correctly and draining the battery completely every time. It is important to configure that the system shuts down (or sleeps/hibernates) when the battery gets lower than say 10%. Somewhere below 10% is the really bad zone for batteries and it is said that it is best for batteries to be recharged when the reach < 50%.
+
+To configure this, see: https://wiki.archlinux.org/index.php/Power_management
+
+However, I just installed the package powerkit and started it with i3. Configuring it is easy.
 
 ## Powerline in bash
  * yay -Syu powerline powerline-fonts
