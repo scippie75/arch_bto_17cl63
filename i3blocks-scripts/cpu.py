@@ -33,6 +33,7 @@ if len(sys.argv) > 1:
     setfreq = freq + 0.5
   if setfreq:
     cpupower_set = subprocess.run(['sudo', 'cpupower', 'frequency-set', '-u', '%.1fGhz' %(setfreq)], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True).stdout
+    freq = setfreq
 
 print("%.2f %.1fGhz" %(loadavg, freq))
 
