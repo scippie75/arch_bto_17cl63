@@ -18,9 +18,10 @@ val = int(percentage.strip('%'))
 labels = [ "", "", "", "", "" ]
 label = ""
 msg = ""
-if status == "Discharging":
+if status == "Discharging" or status == "Unknown":
   label = labels[0]
-  msg = "DIS"
+  if status == "Discharging":
+    msg = "DIS"
   if val >= 95:
     label = labels[4]
   elif val >= 75:
