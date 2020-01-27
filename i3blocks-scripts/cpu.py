@@ -32,6 +32,10 @@ if len(sys.argv) > 1:
   elif sys.argv[1] == '4':
     setfreq = freq + 0.5
   if setfreq:
+    if setfreq < minfreq:
+      setfreq = minfreq
+    elif setfreq > maxfreq:
+      setfreq = maxfreq
     cpupower_set = subprocess.run(['sudo', 'cpupower', 'frequency-set', '-u', '%.1fGhz' %(setfreq)], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True).stdout
     freq = setfreq
 
