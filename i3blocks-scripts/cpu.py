@@ -3,8 +3,10 @@
 import subprocess
 import sys
 
-uptime = subprocess.run(['uptime'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True).stdout.split(' ')
-loadavg = float(''.join(uptime[11:]).split(',')[0])
+loadavg = 0.0
+with open('/proc/loadavg') as f:
+  p = f.readline().split(' ')
+  loadavg = float(p[0])
 
 cpupower = subprocess.run(['cpupower', 'frequency-info'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True).stdout.split('\n')
 freq = '?'
